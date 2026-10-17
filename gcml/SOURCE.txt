@@ -1,1 +1,1 @@
-GCML release (loader build 1) from the GameCore Mod Loader repository, commit a7d8628. Replace this folder with a newer release to update the loader.
+GCML release (loader build 4) from the GameCore Mod Loader repository, commit 15d7f3d. Replace this folder with a newer release to update the loader.
