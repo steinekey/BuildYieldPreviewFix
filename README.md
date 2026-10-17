@@ -2,7 +2,7 @@
 
 A small native mod for Civilization VI: Gathering Storm (DX12, Steam build 15038592). It makes the
 yields on a builder's improvement tooltip ("+2 Food") match what the tile actually gains. It is a
-GameCore Mod Loader (GCML) plugin, so it runs next to Civ6PerfFix or any other
+GameCore Mod Loader (GCML) plugin, so it runs next to Performance Patch or any other
 plugin that uses the loader.
 
 ## What was wrong
@@ -44,4 +44,4 @@ The loader is not built here. `gcml/` holds a release of the GameCore Mod Loader
 (`release.ps1` there writes `bin\release\gcml\`): the loader DLL, `GameCorePlugin.h`, the protocol
 SQL and the loader build. To move to a newer loader, replace the folder and package again.
 
-Licensed AGPL-3.0-only.
+Licensed AGPL-3.0-only, except `gcml/`: the GameCore Mod Loader release is MIT (`gcml/LICENSE.txt`).

@@ -42,6 +42,8 @@ Copy-Item $modinfo $package
 Copy-Item (Join-Path $root "Data\InGame.sql") (Join-Path $package "Data")
 [System.IO.File]::WriteAllText((Join-Path $package "Data\GameCoreModLoader.sql"), $sql)
 Copy-Item $loader (Join-Path $package "Binaries\Win64")
+# The loader is MIT licensed: its notice travels with it.
+Copy-Item (Join-Path $gcml "LICENSE.txt") (Join-Path $package "Binaries\Win64\GCML-LICENSE.txt")
 Copy-Item $plugin (Join-Path $package "Binaries\Win64\$name.dll")
 Write-Host "packaged $package (mod $modId, loader $loaderVersion)"
 
