@@ -1,0 +1,7 @@
+bin/
+obj/
+*.user
+.vs/
+
+# Build log
+_tmp_build.txt

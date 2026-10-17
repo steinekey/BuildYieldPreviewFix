@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="41b3ceeb-1eec-4ccc-a0b1-741d12bb296d" version="1">
+  <Properties>
+    <Name>Build Yield Preview Fix</Name>
+    <Teaser>Builder tooltips show what an improvement really changes</Teaser>
+    <Description>A builder's improvement tooltip ("+2 Food") counts yields the tile already gets from pantheons, buildings and policies as a gain, ignores the improvement it replaces, and never shows a yield that goes down. With this mod each line shows the change the tile's yield will actually see, losses included ("-1 Food"). Gathering Storm, DX12, Steam build 15038592; on any other build it leaves the game alone. Native code, started by the GameCore Mod Loader, so it works together with other native mods that use the loader.</Description>
+    <Authors>Zack Steine</Authors>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+    <AffectsSavedGames>0</AffectsSavedGames>
+  </Properties>
+  <Dependencies>
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+  </Dependencies>
+  <FrontEndActions>
+    <!-- The GameCore Mod Loader protocol (gcml/GameCoreModLoader.sql with this mod's values). The
+         high load order runs it after mods that swap the GameCore the old way. -->
+    <UpdateDatabase id="BuildYieldPreviewFix_GameCoreModLoader">
+      <Properties>
+        <LoadOrder>1000000</LoadOrder>
+      </Properties>
+      <File>Data/GameCoreModLoader.sql</File>
+    </UpdateDatabase>
+  </FrontEndActions>
+  <InGameActions>
+    <!-- Does nothing. The mod keeps one in-game action so the game counts it among the mods of
+         the game being started. -->
+    <UpdateDatabase id="BuildYieldPreviewFix_InGame">
+      <Properties>
+        <LoadOrder>1000000</LoadOrder>
+      </Properties>
+      <File>Data/InGame.sql</File>
+    </UpdateDatabase>
+  </InGameActions>
+  <Files>
+    <File>Data/GameCoreModLoader.sql</File>
+    <File>Data/InGame.sql</File>
+    <File>Binaries/Win64/GameCore_XP2_GCML_FinalRelease.dll</File>
+    <File>Binaries/Win64/BuildYieldPreviewFix.dll</File>
+  </Files>
+</Mod>
